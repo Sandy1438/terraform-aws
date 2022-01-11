@@ -15,7 +15,7 @@ if (Terraform_actions.equals(\'destroy\')) {
 pipeline{
     agent any
 
-// # This is required when you need automatic tools installation through jenkins
+//  This is required when you need automatic tools installation through jenkins
     // tools {
     //     terraform 'terraform_0_13_5'
     //     dockerTool 'docker_latest'
