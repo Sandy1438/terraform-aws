@@ -46,13 +46,6 @@ pipeline{
             }
         }
 
-        stage('Code Linting') {
-            steps {
-                sh 'terraform fmt'
-                // sh 'terraform validate'
-            }
-        }
-
         stage("Terraform Initialization") {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
@@ -60,8 +53,14 @@ pipeline{
                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                     sh 'terraform init'
-                    sh 'terraform validate'
                 }
+            }
+        }
+
+            stage('Code Linting') {
+            steps {
+                sh 'terraform fmt'
+                sh 'terraform validate'
             }
         }
 
