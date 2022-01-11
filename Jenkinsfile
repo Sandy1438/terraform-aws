@@ -49,7 +49,7 @@ pipeline{
         stage('Code Linting') {
             steps {
                 sh 'terraform fmt'
-                sh 'terraform validate'
+                // sh 'terraform validate'
             }
         }
 
@@ -60,6 +60,7 @@ pipeline{
                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                     sh 'terraform init'
+                    sh 'terraform validate'
                 }
             }
         }
