@@ -15,7 +15,7 @@ if (Terraform_actions.equals(\'destroy\')) {
 pipeline{
     agent any
 
-// # This is required when you need automatic tools installation through jenkins
+//  This is required when you need automatic tools installation through jenkins
     // tools {
     //     terraform 'terraform_0_13_5'
     //     dockerTool 'docker_latest'
@@ -46,13 +46,6 @@ pipeline{
             }
         }
 
-        stage('Code Linting') {
-            steps {
-                sh 'terraform fmt'
-                sh 'terraform validate'
-            }
-        }
-
         stage("Terraform Initialization") {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
@@ -61,6 +54,13 @@ pipeline{
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                     sh 'terraform init'
                 }
+            }
+        }
+
+            stage('Code Linting') {
+            steps {
+                sh 'terraform fmt'
+                sh 'terraform validate'
             }
         }
 
