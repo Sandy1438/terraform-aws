@@ -5,7 +5,8 @@ trigger:
 #   vmImage: ubuntu-latest
 
 stages:
-  - stage: "Secret Scan"
+  - stage: SecretScan
+    displayName: Git Secret Name
     jobs:
     - job: GitGuardianShield
       pool:
