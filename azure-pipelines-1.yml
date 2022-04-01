@@ -12,11 +12,12 @@ pool:
 parameters:
   - name: env
     type: string
-    default: QA
+    default: "QA"
 
 variables:
 - group: Test
 
 steps:
+- script: echo $(paravalue)
 - script: echo $(buildnumber)
   displayName: 'Run a one-line script'
