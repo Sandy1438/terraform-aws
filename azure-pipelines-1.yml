@@ -40,3 +40,5 @@ steps:
     useLegacyPattern: false
     enableTelemetry: true
 
+- script: cat '$(Build.SourcesDirectory)'/replace-vars.yaml
+
