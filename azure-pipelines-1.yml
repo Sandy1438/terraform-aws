@@ -16,8 +16,11 @@ parameters:
 
 variables:
 - group: Test
+- name: paravalue
+  value: ${{ parameters.env}}
 
 steps:
 - script: echo $(paravalue)
 - script: echo $(buildnumber)
   displayName: 'Run a one-line script'
+
