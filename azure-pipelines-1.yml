@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+parameters:
+  - name: env
+    type: string
+    default: QA
+
 variables:
 - group: Test
 
