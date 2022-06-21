@@ -47,6 +47,7 @@ steps:
     scanlocation: '$(Build.SourcesDirectory)'
     configtype: 'predefined'
     predefinedconfigfile: 'UDMSecretChecksv8.toml'
+    scanmode: 'nogit'
     reportformat: 'sarif'
 
 
