@@ -14,3 +14,4 @@ To configure triggering of Jenkins job when PR/MR is created in SCM.
 11. Under Branches to build -> Branch Specifier (blank for 'any') -> input the PR branch.
 12. Now need to do configure in GitHub.
 13. Goto GitHub repo -> settings -> webhooks -> create a new webhooks -> input "<JENKINS_HOST>:<JENKINS_PORT>/ghprbhook/
+14. ARBFG142ikxe!@sdgh
