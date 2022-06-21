@@ -42,3 +42,11 @@ steps:
 
 - script: cat '$(Build.SourcesDirectory)'/replace-vars.yaml
 
+- task: Gitleaks@2
+  inputs:
+    scanlocation: '$(Build.SourcesDirectory)'
+    configtype: 'predefined'
+    predefinedconfigfile: 'UDMSecretChecksv8.toml'
+    reportformat: 'sarif'
+
+
